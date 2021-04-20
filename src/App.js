@@ -13,6 +13,7 @@ const App = () => {
        {no:3, name:'spoons', type:'steel', amount:3500}
      ]
      const [products, setProducts]= useState(productsData)
+     
      const addProduct = (product) => {
        product.id = products.length + 1
        setProducts([...products, product])
@@ -24,11 +25,12 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add Product</h2>
+          <Addproduct  addProduct={addProduct} />
         </div>
         <div className="flex-large">
           <h2>View Product</h2>
           <UserTable products={products} deleteProduct={deleteProduct}/>
-          <Addproduct  addProduct={addProduct} />
+          
         
         </div>
       </div>
